@@ -4,10 +4,8 @@ FROM ubuntu:latest
 RUN apt-get update #&& apt-get -y dist-upgrade
 
 # Add requared software
-RUN apt-get -y install unzip openjdk-8-jdk lib32z1 lib32ncurses5 lib32stdc++6 git
-RUN apt-get -y install python
-RUN apt-get -y install python-pip
-RUN pip install --upgrade pip
+RUN apt-get -y install unzip openjdk-8-jdk lib32z1 lib32ncurses5 lib32stdc++6 git # requared for android sdk
+RUN apt-get -y install python # requared for gcloud
 RUN apt-get -y install sudo
 
 # Download android sdk
