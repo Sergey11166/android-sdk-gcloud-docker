@@ -27,6 +27,7 @@ ADD https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/${GCLOUD_TAR} /op
 RUN tar xzf /opt/${GCLOUD_TAR} -C /opt
 
 # Install the Cloud SDK
+RUN apt-get -y install python
 RUN echo y | /opt/google-cloud-sdk/install.sh
 
 ENV PATH=/opt/google-cloud-sdk/bin:$PATH
