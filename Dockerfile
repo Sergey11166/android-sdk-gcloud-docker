@@ -4,10 +4,11 @@ FROM ubuntu:latest
 RUN apt-get update #&& apt-get -y dist-upgrade
 
 # Add requared software
-RUN apt-get -y install unzip openjdk-8-jdk lib32z1 lib32ncurses5 lib32stdc++6 git \
-&& apt-get install python-pip \
-&& pip install --upgrade pip \
-&& apt-get install sudo
+RUN apt-get -y install unzip openjdk-8-jdk lib32z1 lib32ncurses5 lib32stdc++6 git
+RUN apt-get -y install python
+RUN apt-get -y install python-pip
+RUN pip install --upgrade pip
+RUN apt-get -y install sudo
 
 # Download android sdk
 ADD https://dl.google.com/android/repository/sdk-tools-linux-3952940.zip /opt
@@ -30,7 +31,6 @@ ADD https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/${GCLOUD_TAR} /op
 RUN tar xzf /opt/${GCLOUD_TAR} -C /opt
 
 # Install the Cloud SDK
-RUN apt-get -y install python
 RUN echo y | /opt/google-cloud-sdk/install.sh
 
 ENV PATH=/opt/google-cloud-sdk/bin:$PATH
