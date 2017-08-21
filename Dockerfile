@@ -5,7 +5,9 @@ RUN apt-get update #&& apt-get -y dist-upgrade
 
 # Add jdk
 RUN apt-get -y install unzip openjdk-8-jdk lib32z1 lib32ncurses5 lib32stdc++6 git
+RUN apt-get install python-pip
 RUN apt-get install sudo
+RUN pip install --upgrade pip
 
 # Download android sdk
 ADD https://dl.google.com/android/repository/sdk-tools-linux-3952940.zip /opt
