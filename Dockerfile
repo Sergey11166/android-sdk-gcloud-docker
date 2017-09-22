@@ -9,8 +9,8 @@ RUN apt-get -y install python # requared for gcloud
 RUN apt-get -y install sudo
 
 # Download android sdk
-ADD https://dl.google.com/android/repository/sdk-tools-linux-3952940.zip /opt
-RUN unzip /opt/sdk-tools-linux-3952940.zip -d /opt/android-sdk-linux
+ADD https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip /opt
+RUN unzip /opt/sdk-tools-linux-3859397.zip -d /opt/android-sdk-linux
 
 ENV PATH=/opt/android-sdk-linux/platform-tools:/opt/android-sdk-linux/tools:/opt/android-sdk-linux/tools/bin:$PATH
 ENV ANDROID_HOME=/opt/android-sdk-linux
@@ -38,7 +38,7 @@ RUN echo y | /opt/google-cloud-sdk/bin/gcloud components install beta
 
 # Clean up
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-    rm -f /opt/sdk-tools-linux-3952940.zip && \
+    rm -f /opt/sdk-tools-linux-3859397.zip && \
     rm -f /opt/${GCLOUD_TAR} && \
     apt-get autoremove -y && \
     apt-get clean
