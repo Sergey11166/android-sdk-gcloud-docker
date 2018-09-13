@@ -24,7 +24,7 @@ RUN mkdir -p $HOME/.android && echo "count=0" > $HOME/.android/repositories.cfg
 RUN echo y | sdkmanager "extras;google;m2repository"
 
 # Download gcloud
-ENV GCLOUD_TAR=google-cloud-sdk-214.0.0-linux-x86_64.tar.gz
+ENV GCLOUD_TAR=google-cloud-sdk-216.0.0-linux-x86_64.tar.gz
 ADD https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/${GCLOUD_TAR} /opt/
 RUN tar xzf /opt/${GCLOUD_TAR} -C /opt
 
