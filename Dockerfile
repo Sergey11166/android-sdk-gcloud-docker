@@ -5,13 +5,12 @@ WORKDIR /opt
 
 ENV ANDROID_HOME=/opt/android-sdk-linux
 ENV PATH=/opt/android-sdk-linux/platform-tools:/opt/android-sdk-linux/tools:/opt/android-sdk-linux/tools/bin:$PATH
-ENV ANDROID_NDK=/opt/android-ndk-linux
-ENV ANDROID_NDK_HOME=/opt/android-ndk-linux
 
 # Install tools
 RUN apt-get update && apt-get install -y --no-install-recommends \
 	   unzip \
-	   wget
+	   wget \
+	   sudo
 	   
 # Download Android SDK    
 RUN cd /opt/android-sdk-linux && \
