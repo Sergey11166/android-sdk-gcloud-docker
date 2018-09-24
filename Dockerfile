@@ -14,14 +14,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends unzip wget sudo
 	   
 # Download Android SDK   
 ADD https://dl.google.com/android/repository/${ANDROID_SDK_TOOLS_ZIP_FILE} /
-RUN unzip ${ANDROID_SDK_TOOLS_ZIP_FILE} -d /android-sdk-linux && \
+RUN unzip /${ANDROID_SDK_TOOLS_ZIP_FILE} -d /android-sdk-linux && \
 	rm -f /opt/${ANDROID_SDK_TOOLS_ZIP_FILE} && \
 	echo y | sdkmanager "build-tools;28.0.2" "platforms;android-27" && \
 	echo y | sdkmanager "extras;android;m2repository" "extras;google;m2repository"
     
 # Download gcloud
 ADD https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/${GCLOUD_TAR_FILE} /
-RUN tar xzf ${GCLOUD_TAR_FILE} && rm -f ${GCLOUD_TAR_FILE}
+RUN tar xzf /${GCLOUD_TAR_FILE} && rm -f /${GCLOUD_TAR_FILE}
 
 # Install gloud
 RUN echo y | /google-cloud-sdk/install.sh && echo y | /google-cloud-sdk/bin/gcloud components install beta
