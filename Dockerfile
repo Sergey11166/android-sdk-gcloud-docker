@@ -18,7 +18,7 @@ RUN cd /opt/android-sdk-linux && \
 	   unzip sdk-tools.zip && \
 	   rm -f sdk-tools.zip && \
 	   echo y | sdkmanager "build-tools;28.0.2" "platforms;android-27" && \
-	   echo y | sdkmanager "extras;android;m2repository" "extras;google;m2repository" "extras;google;google_play_services"
+	   echo y | sdkmanager "extras;android;m2repository" "extras;google;m2repository"
     
 # Download gcloud
 ENV GCLOUD_TAR=google-cloud-sdk-217.0.0-linux-x86_64.tar.gz
