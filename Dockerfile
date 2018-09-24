@@ -3,7 +3,7 @@ FROM openjdk:8-jdk
 RUN mkdir -p ~/.android && echo "count=0" > ~/.android/repositories.cfg
 
 ENV ANDROID_HOME=/opt/android-sdk-linux
-ENV PATH=${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:/opt/google-cloud-sdk/bin:$PATH
+ENV PATH=PATH=/opt/android-sdk-linux/platform-tools:/opt/android-sdk-linux/tools:/opt/android-sdk-linux/tools/bin:/opt/google-cloud-sdk/bin:$PATH
 ENV GCLOUD_TAR_FILE=google-cloud-sdk-217.0.0-linux-x86_64.tar.gz
 ENV ANDROID_SDK_TOOLS_ZIP_FILE=sdk-tools-linux-4333796.zip
 
