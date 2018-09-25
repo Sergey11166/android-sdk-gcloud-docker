@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends unzip wget sudo
 ADD https://dl.google.com/android/repository/${ANDROID_SDK_TOOLS_ZIP_FILE} /opt
 RUN unzip /opt/${ANDROID_SDK_TOOLS_ZIP_FILE} -d ${ANDROID_HOME} && \
 	rm -f /opt/${ANDROID_SDK_TOOLS_ZIP_FILE} && \
-	echo y | sdkmanager "build-tools;28.0.2" "platforms;android-27" && \
+	echo y | sdkmanager "build-tools;28.0.3" "platforms;android-28" && \
 	echo y | sdkmanager "extras;android;m2repository" "extras;google;m2repository"
     
 # Download gcloud
