@@ -1,7 +1,7 @@
 FROM sergey11166/android-sdk-docker
 
 ENV PATH=PATH=/opt/google-cloud-sdk/bin:$PATH
-ENV GCLOUD_TAR_FILE=google-cloud-sdk-219.0.1-linux-x86_64.tar.gz
+ENV GCLOUD_TAR_FILE=google-cloud-sdk-220.0.0-linux-x86_64.tar.gz
     
 # Download gcloud
 ADD https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/${GCLOUD_TAR_FILE} /opt
